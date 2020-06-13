@@ -9,7 +9,7 @@ class Feeling extends Component {
     submitFeeling = () => {
         console.log('submitFeeling:', this.state.feeling);
         this.props.history.push('/understanding')
-    }//end handle click
+    }//end submitFeeling
 
     handleFeeling = (event) => {
         this.setState({
@@ -25,7 +25,7 @@ class Feeling extends Component {
             <div>
                 <h1>How are you feeling today?</h1>
                 <br/>
-                <FormControl>
+                <FormControl variant="outlined" color="secondary">
                 <Select value={this.state.feeling} onChange={this.handleFeeling}>
                 <MenuItem value=""><em>Feeling?</em></MenuItem>
                     <MenuItem value="5">Excellent</MenuItem>

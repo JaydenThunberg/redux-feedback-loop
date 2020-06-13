@@ -8,8 +8,8 @@ class Understanding extends Component{
 
     submitUnderstanding = () => {
         console.log('submitUnderstanding:', this.state.understanding);
-        this.props.history.push('/understanding')
-    }//end handle click
+        this.props.history.push('/support')
+    }//end submitUnderstanding
 
     handleUnderstanding = (event) => {
         this.setState({
@@ -22,7 +22,7 @@ class Understanding extends Component{
             <div>
                 <h1>How well are you understanding the content?</h1>
                 <br/>
-                <FormControl>
+                <FormControl variant="outlined" color="secondary">
                 <Select value={this.state.understanding} onChange={this.handleUnderstanding}>
                 <MenuItem value=""><em>Understanding?</em></MenuItem>
                     <MenuItem value="5">Excellent</MenuItem>
@@ -34,7 +34,7 @@ class Understanding extends Component{
                 </FormControl>
                 <br />
                 <br />
-                <Button size="small" variant="outlined" color="secondary" onClick={this.submitFeeling}>Next</Button>
+                <Button size="small" variant="outlined" color="secondary" onClick={this.submitUnderstanding}>Next</Button>
             </div>
         )//end return
     }//end render
