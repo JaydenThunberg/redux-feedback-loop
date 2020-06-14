@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
 const formReducer = (state = 0, action) => {
-    console.log('in formReducer', 'state:', state, 'action.type:', action.type);
+    // console.log('formReducer state:', state, 'action.type:', action.type);
   if (action.type === 'NEW_FEELING') {
     return { ...state, feeling: action.payload }
   }
@@ -20,6 +20,7 @@ const formReducer = (state = 0, action) => {
   else if (action.type === 'NEW_COMMENT') {
     return { ...state, comments: action.payload }
   }
+  console.log('in formReducer', 'state:', state, 'action.type:', action.type);
   return state;
 }//end formReducer
 
