@@ -3,27 +3,18 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import {Button} from '@material-ui/core/';
 
-
-
 class Overview extends Component{
-
-    componentDidMount(){
-        console.log('in overview')
-    } // end componentDidMount 
-
-
     //POST route here
     submitFeedback = () => {
-        console.log('in handleclick overview')
+        console.log('submitFeedback review')
         axios.post('/feedback', this.props.reduxState)
-        .then(() => {
-            console.log('Submitted feedback: ', this.props.reduxState);
+        .then( response => {
+            console.log('feedback submitted: ', this.props.reduxState);
         })
         .catch((error) => {
             console.log('error with POST: ', error);
             alert('error submitting feedback Sorry, try again later.')
         })
-        this.props.history.push('/thanks')
     } //end submitFeedback
 
     updateFeedback = (event) => {

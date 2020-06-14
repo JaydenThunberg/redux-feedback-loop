@@ -10,7 +10,7 @@ router.post('/', (req, res) => {
     const values= [req.body.feeling, req.body.understanding, req.body.support, req.body.comments]
     pool.query(queryString, values)
       .then((result) => {
-        console.log(`added feedback to DB`, newFeedback);
+        console.log(`added feedback to DB`, result.rows);
         res.sendStatus(201);//send ok with feedback to db
       })
       .catch((error) => {
