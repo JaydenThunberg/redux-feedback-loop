@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {Button, TextField } from '@material-ui/core/';
 
 class Comments extends Component{
@@ -22,7 +23,7 @@ class Comments extends Component{
         console.log('previous page');
         this.props.history.push('/support')
     }//end previousButton
-    
+
     render(){
         return(
             <div>
@@ -37,4 +38,4 @@ class Comments extends Component{
     }//end render
 }//end class
 
-export default Comments;
+export default connect()(Comments);

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { Button, FormControl, MenuItem, Select } from '@material-ui/core/';
 
 class Support extends Component{
@@ -8,7 +9,15 @@ class Support extends Component{
 
     submitSupport = () => {
         console.log('submitSupport:', this.state.support);
-        this.props.history.push('/comments')
+        if (this.state.support === '') {
+            alert('Please select how you are support, then press Next. Thank you!');
+            } else if (this.state.support > 0) {
+            this.props.dispatch({
+            type: 'NEW_SUPPORT',
+            payload: this.state.support,
+            })
+            this.props.history.push('/comments')
+            }
     }//end submitSupport
 
     handleSupport = (event) => {
@@ -47,4 +56,4 @@ class Support extends Component{
     }//end render
 }//end class
 
-export default Support;
+export default connect()(Support);

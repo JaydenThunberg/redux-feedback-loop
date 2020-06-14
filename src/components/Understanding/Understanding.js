@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import { Button, FormControl, MenuItem, Select } from '@material-ui/core/';
 
 class Understanding extends Component{
@@ -8,7 +9,16 @@ class Understanding extends Component{
 
     submitUnderstanding = () => {
         console.log('submitUnderstanding:', this.state.understanding);
-        this.props.history.push('/support')
+        if (this.state.understanding === '') {
+            alert('Please select how you are understanding, then press Next. Thank you!');
+            } else if (this.state.understanding > 0) {
+            this.props.dispatch({
+            type: 'NEW_UNDERSTANDING',
+            payload: this.state.understanding,
+            })
+            this.props.history.push('/support')
+            }
+        // this.props.history.push('/support')
     }//end submitUnderstanding
 
     handleUnderstanding = (event) => {
@@ -47,4 +57,4 @@ class Understanding extends Component{
     }//end render
 }//end class
 
-export default Understanding;
+export default connect()(Understanding);
