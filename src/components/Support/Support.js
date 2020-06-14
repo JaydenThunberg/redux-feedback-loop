@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Button, FormControl, MenuItem, Select } from '@material-ui/core/';
 
 class Support extends Component{

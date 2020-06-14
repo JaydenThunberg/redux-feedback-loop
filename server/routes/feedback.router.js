@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     pool.query(queryString, values)
       .then((result) => {
         console.log(`added feedback to DB`, newFeedback);
-        res.sendStatus(201);
+        res.sendStatus(201);//send ok with feedback to db
       })
       .catch((error) => {
         console.log(`error with DB ${queryString}`, error);

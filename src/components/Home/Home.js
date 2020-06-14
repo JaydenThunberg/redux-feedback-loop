@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Button } from '@material-ui/core';
 class Home extends Component {
     beginQuestions = () => {
         console.log('beginning questions')
@@ -13,16 +13,16 @@ class Home extends Component {
                 answered with a drop down menu on the page. The fourth is an optional section for comments.
                 Please press the 'next' button to begin.
                 </p>
-                
+
                 <p>The scoring is as follows on a scale of 1-5: <br />
-                5 = Excellent <br />
-                4 = Very Good <br />
-                3 = Good <br />
-                2 = Fair <br />
-                1 = Poor <br />
+                <b>5 = Excellent</b> <br />
+                <b>4 = Very Good</b> <br />
+                <b>3 = Good</b> <br />
+                <b>2 = Fair</b> <br />
+                <b>1 = Poor</b> <br />
                 </p>
 
-                <button onClick={this.beginQuestions}>Begin</button>
+                <Button variant="contained" color="secondary" onClick={this.beginQuestions}>Begin</Button>
             </div>
         )//end return
     }//end render

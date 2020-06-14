@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import {Button, TextField } from '@material-ui/core/';
 
 class Comments extends Component{
@@ -9,7 +9,12 @@ class Comments extends Component{
 
     submitComments = () => {
         console.log('submitComments:', this.state.comments);
-        this.props.history.push('/comments')
+            this.props.dispatch({
+            type: 'NEW_COMMENT',
+            payload: this.state.comments,
+            })
+            this.props.history.push('/review')
+    
     }//end submitComments
 
     handleComments = (event) => {
