@@ -18,6 +18,11 @@ class Comments extends Component{
         console.log('in handleComments');
     }// end handleComments
     
+    previousButton = () => {
+        console.log('previous page');
+        this.props.history.push('/support')
+    }//end previousButton
+    
     render(){
         return(
             <div>
@@ -25,7 +30,8 @@ class Comments extends Component{
                 <TextField color="secondary" label="Comments?" value={this.state.comments} onChange={this.handleComments}/>
                 <br/>
                 <br/>
-                <Button size="small" variant="outlined" color="secondary" onClick={this.submitComments}>Next</Button>
+                <Button size="small" variant="outlined" color="secondary" onClick={this.previousButton}>Previous</Button>
+                <Button size="small" variant="contained" color="secondary" onClick={this.submitComments}>Next</Button>
             </div>
         )//end return
     }//end render

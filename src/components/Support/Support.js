@@ -18,6 +18,11 @@ class Support extends Component{
         console.log('in handleSupport');
     }// end handleSupport
 
+    previousButton = () => {
+        console.log('previous page');
+        this.props.history.push('/understanding')
+    }//end previousButton
+
     render(){
         return(
             <div>
@@ -35,6 +40,7 @@ class Support extends Component{
                 </FormControl>
                 <br />
                 <br />
+                <Button size="small" variant="contained" color="secondary" onClick={this.previousButton}>Previous</Button>
                 <Button size="small" variant="outlined" color="secondary" onClick={this.submitSupport}>Next</Button>
             </div>
         )//end return

@@ -17,6 +17,12 @@ class Understanding extends Component{
         })
         console.log('in handleUnderstanding');
     }// end handleUnderstanding
+
+    previousButton = () => {
+        console.log('previous page');
+        this.props.history.push('/feeling')
+    }//end previousButton
+
     render(){
         return(
             <div>
@@ -34,7 +40,8 @@ class Understanding extends Component{
                 </FormControl>
                 <br />
                 <br />
-                <Button size="small" variant="outlined" color="secondary" onClick={this.submitUnderstanding}>Next</Button>
+                <Button size="small" variant="outlined" color="secondary" onClick={this.previousButton}>Previous</Button>
+                <Button size="small" variant="contained" color="secondary" onClick={this.submitUnderstanding}>Next</Button>
             </div>
         )//end return
     }//end render

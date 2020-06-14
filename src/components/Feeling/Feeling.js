@@ -29,7 +29,10 @@ class Feeling extends Component {
         console.log('in handleFeeling feeling');
     }// end handleFeeling
 
-
+    previousButton = () => {
+        console.log('previous page');
+        this.props.history.push('/')
+    }//end previousButton
 
     render() {
         return (
@@ -48,7 +51,8 @@ class Feeling extends Component {
                 </FormControl>
                 <br />
                 <br />
-                <Button size="small" variant="outlined" color="secondary" onClick={this.submitFeeling}>Next</Button>
+                <Button size="small" variant="outlined" color="secondary" onClick={this.previousButton}>Previous</Button>
+                <Button size="small" variant="contained" color="secondary" onClick={this.submitFeeling}>Next</Button>
             </div>
         ) //end return
     } //end render
