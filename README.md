@@ -1,9 +1,9 @@
-# Project Name
+# Redux Feedback Loop
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is a redux feedback loop that takes in information on each component page via a question. The question data will then be stored and submitted on the last page via an axios call.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Technologies used: React, Redux, Material-UI, Axios, PostgreSQL, Node.js, Express.js, Javascript, HTML, and CSS.
+

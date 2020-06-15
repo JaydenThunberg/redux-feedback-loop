@@ -15,6 +15,7 @@ class Overview extends Component{
             console.log('error with POST: ', error);
             alert('error submitting feedback Sorry, try again later.')
         })
+        this.props.history.push('/thankyou')
     } //end submitFeedback
 
     updateFeedback = (event) => {
